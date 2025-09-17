@@ -1,0 +1,47 @@
+{
+  "name": "quickbite-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/src/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/lodash": "^4.17.20",
+    "@types/yup": "^0.29.14",
+    "bcrypt": "^6.0.0",
+    "concurrently": "^9.2.1",
+    "config": "^4.1.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.18.1",
+    "nanoid": "^5.1.5",
+    "nodemon": "^3.1.10",
+    "uuid": "^13.0.0",
+    "yup": "^1.7.0",
+    "zod": "^4.1.8"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/body-parser": "^1.19.6",
+    "@types/config": "^3.3.5",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mongoose": "^5.11.96",
+    "@types/nanoid": "^2.1.0",
+    "@types/node": "^24.4.0",
+    "@types/uuid": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
