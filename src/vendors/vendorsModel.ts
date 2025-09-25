@@ -1,17 +1,18 @@
 import mongoose, {Schema} from "mongoose";
 import { comparePassword, hashPassword } from "../utils/hashPassword";
 
-export interface UserDocument extends mongoose.Document{
+export interface VendorDocument extends mongoose.Document{
     email: string;
     name: string;
     phoneNumber:string;
     password: string;
+    businessType: string;
     createdAt: Date;
     updatedAt: Date;
     comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
-const userSchema = new Schema<UserDocument>({
+const vendorSchema = new Schema<VendorDocument>({
     email: {type: String, required: true, unique: true},
     name: {type: String, required: true},
     phoneNumber: {type: String, required: true, unique: true},
@@ -22,13 +23,10 @@ const userSchema = new Schema<UserDocument>({
     
 )
 
-userSchema.pre("save", hashPassword)
+vendorSchema.pre("save", hashPassword)
 
-userSchema.methods.comparePassword = comparePassword
+vendorSchema.methods.comparePassword = comparePassword
 
-const User = mongoose.model<UserDocument>("User", userSchema)
+const Vendor = mongoose.model<VendorDocument>("Vendor", vendorSchema)
 
-export default User;
-
-
-
+export default Vendor;

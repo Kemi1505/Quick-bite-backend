@@ -16,7 +16,7 @@ export async function sessionHandler(req: Request, res: Response){
     const sessionId = await createSession(user._id.toString());
     res.cookie("sessionId", sessionId, cookieInfo);
 
-    res.status(200).json({ message: "Login successful" ,sessionId, cookie: req.cookies,user});
+    res.status(200).json({ message: "Login successful" ,sessionId });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Something went wrong" });
