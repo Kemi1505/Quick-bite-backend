@@ -5,7 +5,7 @@ export async function hashPassword(this:any){
     if (!this.isModified('password'))
         return;
     try {
-        const salt = await bcrypt.genSalt(config.get("saltWorkFactor"))
+        const salt = await bcrypt.genSalt(10)
         const hash = await bcrypt.hash(this.password, salt);
         this.password = hash;   
     } catch (error) {
