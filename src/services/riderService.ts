@@ -1,4 +1,4 @@
-import Rider,{RiderDocument} from "./riderModel";
+import Rider, {RiderDocument}from "../models/riderModel"; 
 
 type RiderInput = Omit<RiderDocument, "createdAt" | "updatedAt" | "comparePassword">;
 

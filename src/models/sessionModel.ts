@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 
 export interface SessionDocument extends mongoose.Document {
-  user: mongoose.Types.ObjectId;
+  userId: mongoose.Types.ObjectId;
+  role: "user" | "vendor" | "rider";
   valid: boolean;
   sessionId: string;
   createdAt: Date;
@@ -10,11 +11,10 @@ export interface SessionDocument extends mongoose.Document {
 
 const sessionSchema = new mongoose.Schema<SessionDocument>(
   {
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    userId: { type: mongoose.Schema.Types.ObjectId, refPath: "role", required: true },
     valid: {type: Boolean, default: true},
+    role: { type: String, enum: ["user", "vendor", "rider"], required: true },
     sessionId: { type: String, required: true, unique: true },
-    createdAt: { type: Date, default: Date.now },
-    expiresAt: { type: Date, required: true },
   },
   { timestamps: true }
 );

@@ -1,7 +1,9 @@
 import express from "express";
 import config from "config";
 import connect from "./db/connect";
-import routes from "./routes/routes";
+import authRoutes from "./routes/authRoutes"
+import otpRoutes from "./routes/otpRoutes"
+import passRoutes from "./routes/passwordRoutes"
 import cookieParser from "cookie-parser";
 
 const port = config.get('port') as number
@@ -18,5 +20,7 @@ app.listen(port, host , ()=>{
 
     connect()
 
-    routes(app)
+    authRoutes(app)
+    otpRoutes(app)
+    passRoutes(app)
 })

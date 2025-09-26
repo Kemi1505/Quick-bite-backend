@@ -20,7 +20,7 @@ const generalSchema = {
         .required("Email is required")
     }
     
-export const createUserSchemaa = object({
+export const createUserSchema = object({
     body: object({
         ...generalSchema
     })
@@ -39,5 +39,3 @@ export const createRiderSchema = object({
         vehicleType: string().required("Vehicle Type is required")
     })
 })
-
-

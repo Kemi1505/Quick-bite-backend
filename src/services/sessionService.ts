@@ -1,10 +1,10 @@
 import crypto from "crypto";
-import Sessh from "./gSessionModel";
+import Session from "../models/sessionModel";
 
 export async function createSession(user: any, role: "user" | "vendor" | "rider") {
   const sessionId = crypto.randomUUID();
 
-  const session = await Sessh.create({
+  const session = await Session.create({
     userId: user._id,
     sessionId,
     role,

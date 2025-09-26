@@ -1,5 +1,4 @@
 import bcrypt from "bcrypt";
-import config from 'config';
 
 export async function hashPassword(this:any){
     if (!this.isModified('password'))

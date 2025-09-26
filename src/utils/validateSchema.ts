@@ -21,4 +21,3 @@ const validate = (schema: AnySchema) => async(
 };
 
 export default validate;
-

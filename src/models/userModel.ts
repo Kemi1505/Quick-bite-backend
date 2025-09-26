@@ -29,6 +29,3 @@ userSchema.methods.comparePassword = comparePassword
 const User = mongoose.model<UserDocument>("User", userSchema)
 
 export default User;
-
-
-

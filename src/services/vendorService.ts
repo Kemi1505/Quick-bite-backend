@@ -1,4 +1,4 @@
-import Vendor, {VendorDocument} from "./vendorsModel";
+import Vendor, {VendorDocument} from "../models/vendorModel";
 
 type VendorInput = Omit<VendorDocument, "createdAt" | "updatedAt" | "comparePassword">;
 
