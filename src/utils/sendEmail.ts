@@ -3,11 +3,14 @@ import * as nodemailer from 'nodemailer';
 import { onboardingMail, passwordMail } from './emaiContent';
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
     auth: {
     user: config.get('gmailUser'),
     pass: config.get('gmailPassword'),
     },});
+    
 export async function SendOnboardingMail(email: string, name: string) {
     const from = `"${config.get('gmailName')}" <${config.get('gmailUser')}>`;
 
