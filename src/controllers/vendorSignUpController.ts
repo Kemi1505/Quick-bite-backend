@@ -8,7 +8,7 @@ try{
     const {email, phoneNumber ,name} = req.body
     const vendor = await createVendor(req.body);
     await generateOtp(phoneNumber, "vendor")
-    SendOnboardingMail(email,name)
+    //SendOnboardingMail(email,name)
     const { password, ...vendorWithoutPassword } = vendor.toJSON();
     res.send(vendorWithoutPassword);
 }catch(e:any){

@@ -8,7 +8,7 @@ try{
     const {email, phoneNumber,name} = req.body
     const rider = await createRider(req.body);
     await generateOtp(phoneNumber, "rider")
-    SendOnboardingMail(email,name) 
+    //SendOnboardingMail(email,name) 
     const { password, ...riderWithoutPassword } = rider.toJSON();
     res.send(riderWithoutPassword);
 }catch(e:any){
