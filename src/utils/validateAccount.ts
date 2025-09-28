@@ -6,7 +6,7 @@ const generalSchema = {
         .required("Password is required")
         .min(6, "Password should be 6 characters")
         .matches(/^[a-zA-Z0-9_.-]*$/, "Only letters and numbers are allowed"),
-        passwordConfirmation: string()
+        confirmPassword: string()
         .required("Confirm your password")
         .oneOf(
         [ref("password")],
