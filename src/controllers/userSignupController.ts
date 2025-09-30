@@ -8,7 +8,7 @@ try{
     const {email, phoneNumber, name} = req.body
     const user = await createUser(req.body); 
     await generateOtp(phoneNumber, "user")
-    //SendOnboardingMail(email,name)
+    SendOnboardingMail(email,name)
     const { password, ...userWithoutPassword } = user.toJSON();
     res.send(userWithoutPassword);
 }catch(e:any){
